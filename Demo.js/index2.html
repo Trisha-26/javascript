@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Boxicons -->
+     <link
+     href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+     rel="stylesheet"
+   />
+   <!-- AOS -->
+   <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+   />
+   <!-- Swiper -->
+   <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.0/swiper-bundle.min.css"
+   />
+   <!-- Custom Stylesheet -->
+
+
+    <link rel="stylesheet" href="styles.css"/>
+
+    <!-- Custom javascript -->
+
+    <link rel="script" href="index1.js"/>
+
+    <title>Website</title>
+
+     <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /loop through a collection of all HTML elements:/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /search for elements with a certain attribute:/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            /make an HTTP request using the attribute value as the file name:/
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /remove the attribute, and call this function once more:/
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            }      
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /exit the function:/
+            return;
+          }
+        }
+      };
+      </script>
+
+</head>
+<body>
+    <div w3-include-html="header.html"></div>
+    <script>
+      includeHTML();
+    </script>
+    <!-- overlay -->
+    <div class="overlay"></div>
+
+    <!-- Hero Image -->
+    <!-- <img src="https://bloximages.newyork1.vip.townnews.com/diablomag.com/content/tncms/assets/v3/editorial/7/71/771bd772-ba4b-11ee-9643-ab1e5327df60/65b052e9d4717.image.jpg?resize=750%2C500" class="hero-img" alt="" /> -->
+
+    <!-- Social Links -->
+    <div class="socials">
+     <span class="icon"><i class="bx bxl-instagram"></i></span>
+     <span class="icon"><i class="bx bxl-facebook"></i></span>
+     <span class="icon"><i class="bx bxl-github"></i></span>
+    </div>
+
+    <!-- Color Control -->
+    <div class="control">
+     <div class="widget d-flex">
+       <i class="bx bxs-cog"></i>
+     </div>
+     <div class="colors">
+      <span data-id="#ff6174"></span>
+      <span data-id="#42caff"></span>
+      <span data-id="#7462e1"></span>
+      <span data-id="#ff4600"></span>
+      <span data-id="#ce00ff"></span>
+     </div>
+  </div>
+
+   <!-- Hero -->
+
+   <div class="content">
+    <span>Hello</span>
+    <h1>Am Alex a <span id="type1"></span></h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quis
+      illum distinctio inventore necessitatibus animi quas aliquid at
+      aliquam aspernatur.
+    </p>
+    <a href="#" class="btn btn-hero">Hire me</a>
+  </div>
+</body>
+<!-- Custom Script -->
+<script src="index1.js"></script>
+</html>
